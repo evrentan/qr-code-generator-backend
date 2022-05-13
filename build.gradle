@@ -1,0 +1,35 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.7'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'evrentan.qrcodegenerator'
+version = '1.0.0'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.6.7'
+    implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.7'
+    implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.6.4'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.7'
+    implementation 'com.google.zxing:core:3.5.0'
+    implementation 'com.google.zxing:javase:3.5.0'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

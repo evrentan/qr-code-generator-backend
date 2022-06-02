@@ -96,11 +96,11 @@ public class QrCodeServiceImpl implements QrCodeService {
    * @since 1.0.0
    */
   private void generateByteArrayOutputStream(ByteArrayOutputStream byteArrayOutputStream, GenerateQrCodeRequest qrCodeGenerateRequest) {
-    QRCodeWriter barcodeWriter = new QRCodeWriter();
+    QRCodeWriter qrCodeWriter = new QRCodeWriter();
 
     try {
       BitMatrix bitMatrix =
-          barcodeWriter.encode(qrCodeGenerateRequest.getBarcodeText()
+          qrCodeWriter.encode(qrCodeGenerateRequest.getQrCodeText()
               , BarcodeFormat.QR_CODE
               , qrCodeGenerateRequest.getSize(), qrCodeGenerateRequest.getSize());
 

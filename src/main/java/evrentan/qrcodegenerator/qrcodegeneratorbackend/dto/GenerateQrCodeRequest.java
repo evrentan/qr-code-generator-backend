@@ -20,27 +20,27 @@ import javax.validation.constraints.NotNull;
 public class GenerateQrCodeRequest {
 
   /**
-   * Barcode Text in String Type
+   * QR Code Text in String Type
    *
    * @since 1.0.0
    */
-  @Schema(description = "Barcode Text in String Type")
+  @Schema(description = "QR Code Text in String Type")
   @NotNull
-  private String barcodeText;
+  private String qrCodeText;
 
   /**
-   * Barcode Size in Integer Type.
+   * QR Code Size in Integer Type.
    *
    * @since 1.0.0
    */
-  @Schema(description = "Barcode Size in Integer Type")
+  @Schema(description = "QR Code Size in Integer Type")
   private Integer size;
 
   /**
-   * Barcode BackGround Color in String Type.
+   * QR Code BackGround Color in String Type.
    *
    * @since 1.0.0
    */
-  @Schema(description = "Barcode BackGround Color in String Type")
+  @Schema(description = "QR Code BackGround Color in String Type")
   private String backGroundColor;
 }

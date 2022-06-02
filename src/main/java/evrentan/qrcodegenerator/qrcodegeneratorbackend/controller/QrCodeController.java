@@ -34,7 +34,7 @@ public class QrCodeController {
    * REST end-point in order to generate QR code in Base64 String with POST operation.
    * Details related to API specs can be found in the API Documentation which can be reached as described in README file.
    *
-   * @param qrCodeGenerateRequest object that is used to generate QR Code. Please, see the {@link GenerateQrCodeRequest} class for details.
+   * @param generateQrCodeRequest object that is used to generate QR Code. Please, see the {@link GenerateQrCodeRequest} class for details.
    * @return String within ResponseEntity which corresponds to generated QR Code in base64 String.
    *
    * @author <a href="https://github.com/evrentan">Evren Tan</a>
@@ -48,16 +48,16 @@ public class QrCodeController {
       @ApiResponse(responseCode  = "404", description  = "Not Found"),
       @ApiResponse(responseCode  = "500", description  = "Internal Server Error")
   })
-  public ResponseEntity<String> generateQrCodeStringWithPost(@RequestBody @NotNull GenerateQrCodeRequest qrCodeGenerateRequest) {
-    return ResponseEntity.created(URI.create(qrCodeGenerateRequest.getBarcodeText()))
-        .body(this.qrCodeService.generateQrCodeString(qrCodeGenerateRequest));
+  public ResponseEntity<String> generateQrCodeStringWithPost(@RequestBody @NotNull GenerateQrCodeRequest generateQrCodeRequest) {
+    return ResponseEntity.created(URI.create(generateQrCodeRequest.getQrCodeText()))
+        .body(this.qrCodeService.generateQrCodeString(generateQrCodeRequest));
   }
 
   /**
    * REST end-point in order to generate QR code in Base64 String with GET operation.
    * Details related to API specs can be found in the API Documentation which can be reached as described in README file.
    *
-   * @param barcodeText barcode text in string type that is used to generate QR Code.
+   * @param qrCodeText qr code text in string type that is used to generate QR Code.
    * @return String within ResponseEntity which corresponds to generated QR Code in base64 String.
    *
    * @author <a href="https://github.com/evrentan">Evren Tan</a>
@@ -71,15 +71,15 @@ public class QrCodeController {
       @ApiResponse(responseCode  = "404", description  = "Not Found"),
       @ApiResponse(responseCode  = "500", description  = "Internal Server Error")
   })
-  public ResponseEntity<String> generateQrCodeStringWithGet(@RequestParam (value = "barcodeText") @NotNull String barcodeText) {
-    return ResponseEntity.ok(this.qrCodeService.generateQrCodeString(GenerateQrCodeRequest.builder().barcodeText(barcodeText).build()));
+  public ResponseEntity<String> generateQrCodeStringWithGet(@RequestParam (value = "qrCodeText") @NotNull String qrCodeText) {
+    return ResponseEntity.ok(this.qrCodeService.generateQrCodeString(GenerateQrCodeRequest.builder().qrCodeText(qrCodeText).build()));
   }
 
   /**
    * REST end-point in order to generate QR code in byteArray format with POST operation.
    * Details related to API specs can be found in the API Documentation which can be reached as described in README file.
    *
-   * @param qrCodeGenerateRequest object that is used to generate QR Code. Please, see the {@link GenerateQrCodeRequest} class for details.
+   * @param generateQrCodeRequest object that is used to generate QR Code. Please, see the {@link GenerateQrCodeRequest} class for details.
    * @return byte[] within ResponseEntity which corresponds to generated QR Code.
    *
    * @author <a href="https://github.com/evrentan">Evren Tan</a>
@@ -93,16 +93,16 @@ public class QrCodeController {
       @ApiResponse(responseCode  = "404", description  = "Not Found"),
       @ApiResponse(responseCode  = "500", description  = "Internal Server Error")
   })
-  public ResponseEntity<byte[]> generateQrCodeByteArrayWithPost(@RequestBody @NotNull GenerateQrCodeRequest qrCodeGenerateRequest) {
-    return ResponseEntity.created(URI.create(qrCodeGenerateRequest.getBarcodeText()))
-        .body(this.qrCodeService.generateQrCodeByteArray(qrCodeGenerateRequest));
+  public ResponseEntity<byte[]> generateQrCodeByteArrayWithPost(@RequestBody @NotNull GenerateQrCodeRequest generateQrCodeRequest) {
+    return ResponseEntity.created(URI.create(generateQrCodeRequest.getQrCodeText()))
+        .body(this.qrCodeService.generateQrCodeByteArray(generateQrCodeRequest));
   }
 
   /**
    * REST end-point in order to generate QR code in byteArray format with GET operation.
    * Details related to API specs can be found in the API Documentation which can be reached as described in README file.
    *
-   * @param barcodeText barcode text in string type that is used to generate QR Code.
+   * @param qrCodeText qr code text in string type that is used to generate QR Code.
    * @return byte[] within ResponseEntity which corresponds to generated QR Code.
    *
    * @author <a href="https://github.com/evrentan">Evren Tan</a>
@@ -116,7 +116,7 @@ public class QrCodeController {
       @ApiResponse(responseCode  = "404", description  = "Not Found"),
       @ApiResponse(responseCode  = "500", description  = "Internal Server Error")
   })
-  public ResponseEntity<byte[]> generateQrCodeByteArrayWithGet(@RequestParam (value = "barcodeText") @NotNull String barcodeText) {
-    return ResponseEntity.ok(this.qrCodeService.generateQrCodeByteArray(GenerateQrCodeRequest.builder().barcodeText(barcodeText).build()));
+  public ResponseEntity<byte[]> generateQrCodeByteArrayWithGet(@RequestParam (value = "qrCodeText") @NotNull String qrCodeText) {
+    return ResponseEntity.ok(this.qrCodeService.generateQrCodeByteArray(GenerateQrCodeRequest.builder().qrCodeText(qrCodeText).build()));
   }
 }

@@ -11,14 +11,6 @@ apply plugin: 'java'
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
-jar {
-    manifest {
-        attributes(
-                'Main-Class': 'evrentan.qrcodegenerator.qrcodegeneratorbackend.spring.spring.QrCodeGeneratorBackendApplication'
-        )
-    }
-}
-
 repositories {
     mavenCentral()
 }

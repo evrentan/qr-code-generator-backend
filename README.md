@@ -1,5 +1,5 @@
 # QR Code Generator BackEnd
-A QR Code Generator BackEnd application written in Java 17 using Zxing barcode processing library.
+A QR Code Generator BackEnd application implemented in Java 17 using Zxing barcode processing library.
 
 ## Table of Contents
 

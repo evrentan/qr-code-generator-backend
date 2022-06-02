@@ -6,7 +6,10 @@ plugins {
 
 group = 'evrentan.qrcodegenerator'
 version = '1.0.0'
-sourceCompatibility = '17'
+
+apply plugin: 'java'
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()

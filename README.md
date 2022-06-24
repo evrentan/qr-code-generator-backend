@@ -1,6 +1,8 @@
 # QR Code Generator BackEnd
 A QR Code Generator BackEnd application implemented in Java 17 using Zxing barcode processing library.
 
+QR Code Generator Backend serves on a [Heroku][heroku-reference] instance in production from the [QR Code Generator Backend DNS][qr-code-generator-backend-dns].
+
 ## Table of Contents
 
 1. [How to Contribute](#how-to-contribute)
@@ -81,7 +83,7 @@ docker run -p 8081:8081 --name QrCodeGenerator qr-code-generator:1.0.0
 Only health and caches endpoints are enabled by default. Configuration can be updated within the "actuator" section of the related application.properties file.
 
 ## Run Swagger UI
-[Swagger UI][swagger-ui] can be reached from [local url for Swagger UI][local-swagger-ui].
+[Swagger UI][swagger-ui] can be reached from [local url for Swagger UI][local-swagger-ui] and [production url for Swagger UI][production-swagger-ui].
 
 ## Extra Notes
 
@@ -94,6 +96,7 @@ Permissions of this strong copyleft license are conditioned on making available 
 Please check the [LICENSE](LICENSE) file for more details.
 
 [evren-tan-github]: https://github.com/evrentan
+[qr-code-generator-backend-dns]: https://qr-code-generator-backend.herokuapp.com/
 [spring-boot-version]: https://spring.io/blog/2022/04/21/spring-boot-2-6-7-available-now
 [java-version]: https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
 [gradle-version]: https://gradle.org/releases/
@@ -106,3 +109,5 @@ Please check the [LICENSE](LICENSE) file for more details.
 [zxing]: https://github.com/zxing/zxing
 [swagger-ui]: https://swagger.io/tools/swagger-ui/
 [local-swagger-ui]: http://localhost:8081/swagger-ui/index.html
+[production-swagger-ui]: https://qr-code-generator-backend.herokuapp.com/swagger-ui/index.html
+[heroku-reference]: https://heroku.com

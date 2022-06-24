@@ -1,9 +1,6 @@
 package evrentan.qrcodegenerator.qrcodegeneratorbackend.spring.spring;
 
-import evrentan.qrcodegenerator.qrcodegeneratorbackend.spring.config.BufferedImageHttpConverterConfig;
-import evrentan.qrcodegenerator.qrcodegeneratorbackend.spring.config.CommonConfig;
-import evrentan.qrcodegenerator.qrcodegeneratorbackend.spring.config.SwaggerConfig;
-import evrentan.qrcodegenerator.qrcodegeneratorbackend.spring.config.WebConfig;
+import evrentan.qrcodegenerator.qrcodegeneratorbackend.spring.config.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
@@ -12,7 +9,8 @@ import org.springframework.context.annotation.Import;
 @Import(value = {CommonConfig.class
     , WebConfig.class
     , SwaggerConfig.class
-    , BufferedImageHttpConverterConfig.class})
+    , BufferedImageHttpConverterConfig.class
+    , SecurityConfig.class})
 public class QrCodeGeneratorBackendApplication {
 
   public static void main(String[] args) {

@@ -1,7 +1,7 @@
 # QR Code Generator BackEnd
 A QR Code Generator BackEnd application implemented in Java 17 using Zxing barcode processing library.
 
-QR Code Generator Backend serves on a [Heroku][heroku-reference] instance in production from the [QR Code Generator Backend DNS][qr-code-generator-backend-dns].
+QR Code Generator Backend serves on a [Heroku][heroku-reference] instance in production from the [QR Code Generator Backend End-Point][qr-code-generator-backend-endpoint].
 
 ## Table of Contents
 
@@ -96,7 +96,7 @@ Permissions of this strong copyleft license are conditioned on making available 
 Please check the [LICENSE](LICENSE) file for more details.
 
 [evren-tan-github]: https://github.com/evrentan
-[qr-code-generator-backend-dns]: https://qr-code-generator-backend.herokuapp.com/
+[qr-code-generator-backend-endpoint]: https://qr-code-generator-backend.herokuapp.com/
 [spring-boot-version]: https://spring.io/blog/2022/04/21/spring-boot-2-6-7-available-now
 [java-version]: https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
 [gradle-version]: https://gradle.org/releases/

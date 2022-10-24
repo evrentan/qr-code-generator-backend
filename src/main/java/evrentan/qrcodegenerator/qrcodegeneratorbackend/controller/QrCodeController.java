@@ -19,6 +19,7 @@ import java.net.URI;
  * @author <a href="https://github.com/evrentan">Evren Tan</a>
  * @since 1.0.0
  */
+@AllArgsConstructor
 @RestController
 @RequestMapping(value = "/qrCode", consumes = MediaType.APPLICATION_JSON_VALUE)
 @Tag(name = "QR Code Related APIs")
@@ -26,9 +27,6 @@ public class QrCodeController {
 
   private final QrCodeService qrCodeService;
 
-  public QrCodeController(QrCodeService qrCodeService) {
-    this.qrCodeService = qrCodeService;
-  }
 
   /**
    * REST end-point in order to generate QR code in Base64 String with POST operation.

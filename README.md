@@ -28,6 +28,7 @@ For the contributor covenant to this project, please check the Code of Conduct f
 Below you can find the names of the contributors to this project;
 
 - [Evren Tan][evren-tan-github]
+- [M. Said Gurbuz][shortlymsg-github]
 
 ## Requirements
 
@@ -111,3 +112,4 @@ Please check the [LICENSE](LICENSE) file for more details.
 [local-swagger-ui]: http://localhost:8081/swagger-ui/index.html
 [production-swagger-ui]: https://qr-code-generator-backend.herokuapp.com/swagger-ui/index.html
 [heroku-reference]: https://heroku.com
+[shortlymsg-github]: https://github.com/ShortlyMsg

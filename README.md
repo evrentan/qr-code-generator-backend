@@ -6,16 +6,15 @@ QR Code Generator Backend serves on a [Heroku][heroku-reference] instance in pro
 ## Table of Contents
 
 1. [How to Contribute](#how-to-contribute)
-2. [Credits](#credits)
-3. [Requirements](#requirements)
-4. [Coding Standards](#coding-standards)
-5. [Version Control Standards](#version-control-standards)
-6. [Running the Application Locally](#running-the-application-locally)
-7. [Running the Application in Docker](#running-the-application-in-docker)
-8. [Run Actuator](#run-actuator)
-9. [Run Swagger UI](#run-swagger-ui)
-10. [Extra Notes](#extra-notes)
-11. [Copyright](#copyright)
+2. [Requirements](#requirements)
+3. [Coding Standards](#coding-standards)
+4. [Version Control Standards](#version-control-standards)
+5. [Running the Application Locally](#running-the-application-locally)
+6. [Running the Application in Docker](#running-the-application-in-docker)
+7. [Run Actuator](#run-actuator)
+8. [Run Swagger UI](#run-swagger-ui)
+9. [Extra Notes](#extra-notes)
+10. [Copyright](#copyright)
 
 ## How to Contribute
 
@@ -23,13 +22,9 @@ For the contributor covenant to this project, please check the Code of Conduct f
 
 [![Contributor Covenant][contributor]](CODE_OF_CONDUCT.md)
 
-## Credits
+### Credits
 
-Below you can find the names of the contributors to this project;
-
-- [Evren Tan][evren-tan-github]
-- [M. Said Gurbuz][shortlymsg-github]
-- [Ujwal Kumar][ujwal-kumar-github]
+Please check the [Contributors List](CONTRIBUTORS.md) to see who makes this open-source alive.
 
 ## Requirements
 
@@ -57,7 +52,7 @@ Below version control standards should be followed within the project;
 - While creating a PR "feature:", "fix:" or "doc:" prefix should be used to identify the PR type.
 - PRs should be linked with a valid issue in the [QR Code Generator Workspace GitHub Repository Project][qr-code-generator-workspace-github].
 
-## Running the application locally
+## Running the Application Locally
 
 Application can be run with [QrCodeGeneratorBackendApplication][qr-code-generator-manager-main-class] class.
 
@@ -97,7 +92,6 @@ GNU General Public License v3.0
 Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
 Please check the [LICENSE](LICENSE) file for more details.
 
-[evren-tan-github]: https://github.com/evrentan
 [qr-code-generator-backend-endpoint]: https://qr-code-generator-backend.herokuapp.com/
 [spring-boot-version]: https://spring.io/blog/2022/04/21/spring-boot-2-6-7-available-now
 [java-version]: https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
@@ -113,5 +107,3 @@ Please check the [LICENSE](LICENSE) file for more details.
 [local-swagger-ui]: http://localhost:8081/swagger-ui/index.html
 [production-swagger-ui]: https://qr-code-generator-backend.herokuapp.com/swagger-ui/index.html
 [heroku-reference]: https://heroku.com
-[shortlymsg-github]: https://github.com/ShortlyMsg
-[ujwal-kumar-github]: https://github.com/ujwalkumar1995

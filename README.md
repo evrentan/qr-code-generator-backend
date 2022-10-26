@@ -25,11 +25,7 @@ For the contributor covenant to this project, please check the Code of Conduct f
 
 ## Credits
 
-Below you can find the names of the contributors to this project;
-
-- [Evren Tan][evren-tan-github]
-- [M. Said Gurbuz][shortlymsg-github]
-- [Ujwal Kumar][ujwal-kumar-github]
+- [Contributers List](https://github.com/Rohit-R2000/qr-code-generator-backend/blob/main/CONTRIBUTORS.md)
 
 ## Requirements
 

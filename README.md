@@ -73,10 +73,10 @@ gradle bootRun
 Application can be run in Docker. [Dockerfile](Dockerfile) in the project root folder is the configuration file for Docker build.
 
 ```shell
-gradle build
-docker build -t qr-code-generator:1.0.0 .
+docker build -t qr-code-generator:1.0.0 --build-arg APP_JAR=qr-code-generator-backend-1.0.0.jar .
 docker run -p 8081:8081 --name QrCodeGenerator qr-code-generator:1.0.0
 ```
+Note that you can specify the name of the APP_JAR argument based on the jar file that is generate by gradle. If the argument is not provided, it will pick the default name specified in the Dockerfile.
 
 ## Run Actuator
 

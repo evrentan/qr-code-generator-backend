@@ -4,7 +4,7 @@ WORKDIR /home/gradle/src
 RUN gradle build 
 
 FROM openjdk:17-alpine
-EXPOSE 8082
+EXPOSE 8081
 RUN mkdir /app
 COPY --from=build /home/gradle/src/build/libs/*.jar /app/qr-code-generator-backend-1.0.0.jar
 ENTRYPOINT ["java", "-jar", "/app/qr-code-generator-backend-1.0.0.jar"]

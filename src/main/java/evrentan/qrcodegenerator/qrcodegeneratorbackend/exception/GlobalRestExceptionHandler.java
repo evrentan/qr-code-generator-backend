@@ -20,9 +20,9 @@ import java.io.IOException;
 public class GlobalRestExceptionHandler {
     
     /**
-     * To handle error cases in I/O operations and return an internal server error.
+     * To handle error cases in I/O operations or error cases that may occur when encoding a barcode and return an internal server error.
      *
-     * @param exception IOException
+     * @param exception IOException | WriterException
      * @param request   Web request
      *
      * @return ResponseEntity
@@ -30,34 +30,15 @@ public class GlobalRestExceptionHandler {
      * @author <a href="https://github.com/nmarulo">nmarulo</a>
      * @since 1.0.0
      */
-    @ExceptionHandler(value = {IOException.class})
+    @ExceptionHandler(value = {
+        IOException.class,
+        WriterException.class
+    })
     public ResponseEntity<CustomRestError> processIOException(final Exception exception, final HttpServletRequest request) {
         var customRestError = CustomRestError.builder()
                                              .message(exception.getCause()
                                                                .getMessage())
                                              .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
-                                             .build();
-        
-        return responseEntity(customRestError);
-    }
-    
-    /**
-     * To handle error cases that may occur when encoding a barcode and returning bad request.
-     *
-     * @param exception WriterException
-     * @param request   Web request
-     *
-     * @return ResponseEntity
-     *
-     * @author <a href="https://github.com/nmarulo">nmarulo</a>
-     * @since 1.0.0
-     */
-    @ExceptionHandler(value = {WriterException.class})
-    public ResponseEntity<CustomRestError> processWriteException(final Exception exception, final HttpServletRequest request) {
-        var customRestError = CustomRestError.builder()
-                                             .message(exception.getCause()
-                                                               .getMessage())
-                                             .status(HttpStatus.BAD_REQUEST.value())
                                              .build();
         
         return responseEntity(customRestError);

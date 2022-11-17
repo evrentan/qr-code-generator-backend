@@ -46,11 +46,13 @@ Below coding standards should be followed within the project;
 
 Below version control standards should be followed within the project;
 
-- Feature enhancements or defect fixes should not be committed to main branches, they should be coded in feature or fix branches.
+- The default branch is [staging branch][staging-branch-github-link].
+- Feature enhancements or defect fixes should not be committed to the default branch, they should be coded in feature or bug branches.
 - Issues should be created for each feature or fix in the [QR Code Generator Workspace GitHub Repository Project][qr-code-generator-workspace-github].
-- Pull request (PR) should be created for each feature/fix branch to main branches.
-- While creating a PR "feature:", "fix:" or "doc:" prefix should be used to identify the PR type.
+- Pull request (PR) should be created for each feature/bug branch to [staging branch][staging-branch-github-link].
+- While creating a PR "[Feature]: ", "[Bug]: " or "[Doc]: " prefix should be used to identify the PR type.
 - PRs should be linked with a valid issue in the [QR Code Generator Workspace GitHub Repository Project][qr-code-generator-workspace-github].
+- If validations are passed in the [staging branch][staging-branch-github-link], then a PR is created with "merge branch" label to the [main branch][main-branch-github-link].
 
 ## Running the Application Locally
 
@@ -107,3 +109,5 @@ Please check the [LICENSE](LICENSE) file for more details.
 [local-swagger-ui]: http://localhost:8081/swagger-ui/index.html
 [production-swagger-ui]: https://qr-code-generator-backend.herokuapp.com/swagger-ui/index.html
 [heroku-reference]: https://heroku.com
+[staging-branch-github-link]: https://github.com/evrentan/qr-code-generator-backend/tree/staging
+[main-branch-github-link]: https://github.com/evrentan/qr-code-generator-backend/tree/main

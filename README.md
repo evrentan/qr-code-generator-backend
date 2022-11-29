@@ -52,7 +52,7 @@ Below version control standards should be followed within the project;
 - Pull request (PR) should be created for each feature/bug branch to [staging branch][staging-branch-github-link].
 - While creating a PR "[Feature]: ", "[Bug]: " or "[Doc]: " prefix should be used to identify the PR type.
 - PRs should be linked with a valid issue in the [QR Code Generator Workspace GitHub Repository Project][qr-code-generator-workspace-github].
-- If validations are passed in the [staging branch][staging-branch-github-link], then a PR is created with "merge branch" label to the [main branch][main-branch-github-link].
+- If validations are passed in the [staging branch][staging-branch-github-link], then a merge branch request is created with "merge branch" label & a linked PR to the [main branch][main-branch-github-link].
 
 ## Running the Application Locally
 

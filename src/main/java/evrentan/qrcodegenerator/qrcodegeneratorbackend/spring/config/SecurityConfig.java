@@ -1,10 +1,10 @@
 package evrentan.qrcodegenerator.qrcodegeneratorbackend.spring.config;
 
 import evrentan.qrcodegenerator.qrcodegeneratorbackend.filter.CORSFilter;
+import jakarta.servlet.Filter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.servlet.Filter;
 
 @Configuration
 public class SecurityConfig {

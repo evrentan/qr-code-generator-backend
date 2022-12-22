@@ -2,12 +2,12 @@ package evrentan.qrcodegenerator.qrcodegeneratorbackend.exception;
 
 import com.google.zxing.WriterException;
 import evrentan.qrcodegenerator.qrcodegeneratorbackend.dto.shared.CustomRestError;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
@@ -36,11 +36,10 @@ public class GlobalRestExceptionHandler {
     })
     public ResponseEntity<CustomRestError> processIOException(final Exception exception, final HttpServletRequest request) {
         var customRestError = CustomRestError.builder()
-                                             .message(exception.getCause()
-                                                               .getMessage())
+                                             .message(exception.getCause().getMessage())
                                              .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
                                              .build();
-        
+
         return responseEntity(customRestError);
     }
     

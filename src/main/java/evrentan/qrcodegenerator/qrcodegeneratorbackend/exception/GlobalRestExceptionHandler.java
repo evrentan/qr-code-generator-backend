@@ -42,6 +42,29 @@ public class GlobalRestExceptionHandler {
 
         return responseEntity(customRestError);
     }
+
+    /**
+     * To handle error cases in request validation and return a bad request.
+     *
+     * @param exception QrCodeTextValidationException
+     * @param request   Web request
+     *
+     * @return ResponseEntity
+     *
+     * @author <a href="https://github.com/nmarulo">nmarulo</a>
+     * @since 1.0.0
+     */
+    @ExceptionHandler(value = {
+        QrCodeTextValidationException.class
+    })
+    public ResponseEntity<CustomRestError> processBadRequestException(final QrCodeTextValidationException exception, final HttpServletRequest request) {
+        var customRestError = CustomRestError.builder()
+                                             .message(exception.getMessage())
+                                             .status(HttpStatus.BAD_REQUEST.value())
+                                             .build();
+
+        return responseEntity(customRestError);
+    }
     
     /**
      * To build ResponseEntity with CustomerRestError

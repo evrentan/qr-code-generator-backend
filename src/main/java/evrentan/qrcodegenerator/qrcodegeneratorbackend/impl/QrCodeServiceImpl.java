@@ -6,6 +6,8 @@ import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import evrentan.qrcodegenerator.qrcodegeneratorbackend.dto.GenerateQrCodeRequest;
+import evrentan.qrcodegenerator.qrcodegeneratorbackend.exception.QrCodeTextValidationException;
+import evrentan.qrcodegenerator.qrcodegeneratorbackend.message.ExceptionMessages;
 import evrentan.qrcodegenerator.qrcodegeneratorbackend.service.QrCodeService;
 import org.springframework.stereotype.Service;
 
@@ -61,6 +63,8 @@ public class QrCodeServiceImpl implements QrCodeService {
    */
   @Override
   public byte[] generateQrCodeByteArray(GenerateQrCodeRequest qrCodeGenerateRequest) {
+    this.validateQrCodeText(qrCodeGenerateRequest.getQrCodeText());
+
     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 
     this.completeGenerateQrCodeRequest(qrCodeGenerateRequest);
@@ -79,6 +83,8 @@ public class QrCodeServiceImpl implements QrCodeService {
    * @since 1.0.0
    */
   private void completeGenerateQrCodeRequest(GenerateQrCodeRequest qrCodeGenerateRequest) {
+    this.validateQrCodeText(qrCodeGenerateRequest.getQrCodeText());
+
     if (Objects.isNull(qrCodeGenerateRequest.getSize()))
       qrCodeGenerateRequest.setSize(QR_CODE_SIZE);
 
@@ -109,6 +115,12 @@ public class QrCodeServiceImpl implements QrCodeService {
       ImageIO.write(bufferedImage, QR_CODE_FILE_FORMAT, byteArrayOutputStream);
     } catch (WriterException | IOException e) {
       throw new RuntimeException(e);
+    }
+  }
+
+  private void validateQrCodeText(String qrCodeText) {
+    if (qrCodeText.isBlank()) {
+      throw new QrCodeTextValidationException(ExceptionMessages.QR_CODE_TEXT_VALIDATION_EXCEPTION);
     }
   }
 }

@@ -2,12 +2,12 @@ package evrentan.qrcodegenerator.qrcodegeneratorbackend.exception;
 
 import com.google.zxing.WriterException;
 import evrentan.qrcodegenerator.qrcodegeneratorbackend.dto.shared.CustomRestError;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
@@ -36,11 +36,33 @@ public class GlobalRestExceptionHandler {
     })
     public ResponseEntity<CustomRestError> processIOException(final Exception exception, final HttpServletRequest request) {
         var customRestError = CustomRestError.builder()
-                                             .message(exception.getCause()
-                                                               .getMessage())
+                                             .message(exception.getCause().getMessage())
                                              .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
                                              .build();
-        
+
+        return responseEntity(customRestError);
+    }
+
+    /**
+     * To handle error cases in request validation and return a bad request.
+     *
+     * @param exception QrCodeTextValidationException
+     * @param request   Web request
+     *
+     * @return ResponseEntity
+     *
+     * @author <a href="https://github.com/nmarulo">nmarulo</a>
+     * @since 1.0.0
+     */
+    @ExceptionHandler(value = {
+        QrCodeTextValidationException.class
+    })
+    public ResponseEntity<CustomRestError> processBadRequestException(final QrCodeTextValidationException exception, final HttpServletRequest request) {
+        var customRestError = CustomRestError.builder()
+                                             .message(exception.getMessage())
+                                             .status(HttpStatus.BAD_REQUEST.value())
+                                             .build();
+
         return responseEntity(customRestError);
     }
     

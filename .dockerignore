@@ -1,0 +1,14 @@
+.git
+.gradle
+.idea
+build/
+!build/libs/*.jar
+*.iml
+*.iws
+*.ipr
+.settings
+.classpath
+.project
+*.log
+tmp/
+out/

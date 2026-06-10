@@ -1,6 +1,6 @@
 ARG APP_JAR=qr-code-generator-backend-1.0.0.jar
 
-FROM amazoncorretto:17-alpine AS build
+FROM amazoncorretto:21-alpine AS build
 WORKDIR /home/gradle/src
 COPY gradlew .
 COPY gradle gradle
@@ -10,7 +10,7 @@ COPY src src
 RUN chmod +x ./gradlew
 RUN --mount=type=cache,target=/root/.gradle ./gradlew build --no-daemon
 
-FROM amazoncorretto:17-alpine
+FROM amazoncorretto:21-alpine
 LABEL maintainer="Evren Tan"
 LABEL application="qr-code-generator"
 LABEL version="1.0.0"
